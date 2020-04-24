@@ -6,6 +6,7 @@ export async function handler(event, context) {
     const util = require('util');
     const exec = util.promisify(require('child_process').exec);
     const { stdout, stderr } = await exec('pwd');
+    console.log(stdout);
     const { stdout2, stderr2 } = await exec('./src/lambda/spreadbet.exe');
 
     return {
