@@ -7,7 +7,10 @@ export async function handler(event, context) {
     const exec = util.promisify(require('child_process').exec);
     const { stdout, stderr } = await exec('pwd');
     console.log(stdout);
-    const { stdout2, stderr2 } = await exec('./src/lambda/spreadbet.exe');
+    const { stdout3, stderr3 } = await exec('ls');
+    console.log(stdout3);
+    // TODO parameterise this path by environment
+    // const { stdout2, stderr2 } = await exec('./spreadbet.exe');
 
     return {
       statusCode: 200,
