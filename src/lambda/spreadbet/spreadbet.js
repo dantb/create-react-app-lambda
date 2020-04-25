@@ -1,3 +1,5 @@
+require('./graal-spreadbet.exe')
+
 export async function handler(event, context) {
   try {
     console.log(event)
@@ -10,7 +12,7 @@ export async function handler(event, context) {
     const { stdout3, stderr3 } = await exec('ls');
     console.log(stdout3);
     // TODO parameterise this path by environment
-    // const { stdout2, stderr2 } = await exec('./spreadbet.exe');
+    const { stdout2, stderr2 } = await exec('./graal-spreadbet.exe');
 
     return {
       statusCode: 200,
